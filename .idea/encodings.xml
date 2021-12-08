@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/calendar/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/calendar/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/carrierethernet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/carrierethernet/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database-perf/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database-perf/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ecord/co/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ecord/co/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flowtest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flowtest/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-fwd/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group-fwd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/domainmgr/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/domainmgr/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/domainprovider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/domainprovider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icona/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ifwd/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ifwd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ipfix/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ipfix/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mef-nrp-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mef-nrp-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mef-sca-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mef-sca-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oneping/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oneping/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ovsdb-rest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ovsdb-rest/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/patchpanel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/patchpanel/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/driver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/driver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pppoe/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sdx-l2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sdx-l2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sdx-l3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sdx-l3/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tvue/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tvue/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uiref/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uiref/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

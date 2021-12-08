@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/calendar/pom.xml" />
+        <option value="$PROJECT_DIR$/carrierethernet/pom.xml" />
+        <option value="$PROJECT_DIR$/database-perf/pom.xml" />
+        <option value="$PROJECT_DIR$/flowtest/pom.xml" />
+        <option value="$PROJECT_DIR$/group-fwd/pom.xml" />
+        <option value="$PROJECT_DIR$/icona/pom.xml" />
+        <option value="$PROJECT_DIR$/mef-nrp-api/pom.xml" />
+        <option value="$PROJECT_DIR$/mef-sca-api/pom.xml" />
+        <option value="$PROJECT_DIR$/ovsdb-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/sdx-l2/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
