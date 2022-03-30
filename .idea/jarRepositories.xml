@@ -16,20 +16,5 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
-    <remote-repository>
-      <option name="id" value="ovsdb-rfc" />
-      <option name="name" value="ovsdb-rfc" />
-      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots/org/onosproject/onos-ovsdb-rfc/1.8.0-SNAPSHOT/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="snapshots" />
-      <option name="name" value="snapshots" />
-      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="ovsdb-api" />
-      <option name="name" value="ovsdb-api" />
-      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots/org/onosproject/onos-ovsdb-api/1.8.0-SNAPSHOT/" />
-    </remote-repository>
   </component>
 </project>

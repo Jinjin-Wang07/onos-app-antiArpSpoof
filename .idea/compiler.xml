@@ -9,36 +9,5 @@
         <module name="onos-app-antiArpSpoof" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mef-nrp-api" target="1.8" />
-      <module name="mef-sca-api" target="1.8" />
-      <module name="onos-app-calendar" target="1.8" />
-      <module name="onos-app-carrierethernet" target="1.8" />
-      <module name="onos-app-database-perf" target="1.8" />
-      <module name="onos-app-ecord-co" target="1.8" />
-      <module name="onos-app-flowtest" target="1.8" />
-      <module name="onos-app-group-fwd" target="1.8" />
-      <module name="onos-app-icona" target="1.5" />
-      <module name="onos-app-icona-domain-manager" target="1.8" />
-      <module name="onos-app-icona-domain-provider" target="1.8" />
-      <module name="onos-app-ipfix" target="1.8" />
-      <module name="onos-app-oneping" target="1.8" />
-      <module name="onos-app-patchpanel" target="1.8" />
-      <module name="onos-app-sdx-l2" target="1.8" />
-      <module name="onos-app-sdx-l3" target="1.8" />
-      <module name="onos-app-tvue" target="1.8" />
-      <module name="onos-app-uiref" target="1.8" />
-      <module name="onos-apps-pppoe-api" target="1.8" />
-      <module name="onos-apps-pppoe-app" target="1.8" />
-      <module name="onos-apps-pppoe-driver" target="1.8" />
-      <module name="onos-icona" target="1.5" />
-      <module name="onos-pppoe" target="1.5" />
-      <module name="ovsdb-rest" target="1.8" />
-    </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="onos-app-oneping" options="-Xpkginfo:always" />
-    </option>
   </component>
 </project>
