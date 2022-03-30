@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="169a7207-c639-41af-8204-79974f5556b1" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="21sgIkXa7shzvy1qbcnMVXjGxUB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../onos/apps" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.onosproject.ifwd" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="169a7207-c639-41af-8204-79974f5556b1" name="Changes" comment="" />
+      <created>1638735135263</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638735135263</updated>
+      <workItem from="1638735137759" duration="9514000" />
+      <workItem from="1638824139094" duration="3350000" />
+      <workItem from="1638827569016" duration="3214000" />
+      <workItem from="1638832141847" duration="6572000" />
+      <workItem from="1638906095758" duration="10025000" />
+      <workItem from="1638921792714" duration="884000" />
+      <workItem from="1638960583347" duration="1171000" />
+      <workItem from="1639002071858" duration="1201000" />
+      <workItem from="1646175015558" duration="24387000" />
+      <workItem from="1648584509950" duration="4185000" />
+      <workItem from="1648588843624" duration="22109000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

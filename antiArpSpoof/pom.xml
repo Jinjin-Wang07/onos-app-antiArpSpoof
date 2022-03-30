@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2014-2016 Open Networking Foundation
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.onosproject</groupId>
+        <artifactId>onos-dependencies</artifactId>
+        <version>1.8.0</version>
+        <relativePath/><!-- parent is remote -->
+    </parent>
+
+    <artifactId>onos-app-antiArpSpoof</artifactId>
+    <version>1.0.0</version>
+    <packaging>bundle</packaging>
+
+    <description>Application to detect arp spoofing</description>
+
+    <properties>
+        <onos.version>2.0.0</onos.version>
+        <onos.app.name>org.onosproject.antiArpSpoof</onos.app.name>
+        <onos.app.origin>ON.Lab</onos.app.origin>
+        <onos.app.title>Detection of Arp Spoofing</onos.app.title>
+        <onos.app.category>Traffic Steering</onos.app.category>
+        <onos.app.url>http://onosproject.org</onos.app.url>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.onosproject</groupId>
+            <artifactId>onos-api</artifactId>
+            <version>${onos.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.onosproject</groupId>
+            <artifactId>onos-core-common</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.annotations</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.onosproject</groupId>
+                <artifactId>onos-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--&lt;!&ndash;-->
+        <!--  ~ Copyright 2014-2016 Open Networking Foundation-->
+        <!--  ~-->
+        <!--  ~ Licensed under the Apache License, Version 2.0 (the "License");-->
+        <!--  ~ you may not use this file except in compliance with the License.-->
+        <!--  ~ You may obtain a copy of the License at-->
+        <!--  ~-->
+        <!--  ~     http://www.apache.org/licenses/LICENSE-2.0-->
+        <!--  ~-->
+        <!--  ~ Unless required by applicable law or agreed to in writing, software-->
+        <!--  ~ distributed under the License is distributed on an "AS IS" BASIS,-->
+        <!--  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.-->
+        <!--  ~ See the License for the specific language governing permissions and-->
+        <!--  ~ limitations under the License.-->
+        <!--  &ndash;&gt;-->
+        <!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+        <!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">-->
+        <!--    <modelVersion>4.0.0</modelVersion>-->
+
+        <!--    <parent>-->
+        <!--        <groupId>org.onosproject</groupId>-->
+        <!--        <artifactId>onos-dependencies</artifactId>-->
+        <!--        <version>1.8.0</version>-->
+        <!--        <relativePath/>&lt;!&ndash; parent is remote &ndash;&gt;-->
+        <!--    </parent>-->
+
+        <!--    <artifactId>onos-app-ifwd</artifactId>-->
+        <!--    <version>1.8.0-SNAPSHOT</version>-->
+        <!--    <packaging>bundle</packaging>-->
+
+        <!--    <description>Reactive forwarding application using intent service (experimental)</description>-->
+
+        <!--    <properties>-->
+        <!--        <onos.version>2.0.0</onos.version>-->
+        <!--        <onos.app.name>org.onosproject.antiArpSpoof</onos.app.name>-->
+        <!--        <onos.app.origin>ON.Lab</onos.app.origin>-->
+        <!--        <onos.app.title>Reactive Forwarding App (Intent)</onos.app.title>-->
+        <!--        <onos.app.category>Traffic Steering</onos.app.category>-->
+        <!--        <onos.app.url>http://onosproject.org</onos.app.url>-->
+        <!--    </properties>-->
+
+        <!--    <dependencies>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.onosproject</groupId>-->
+        <!--            <artifactId>onos-api</artifactId>-->
+        <!--            <version>${onos.version}</version>-->
+        <!--        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.onosproject</groupId>-->
+        <!--            <artifactId>onos-core-common</artifactId>-->
+        <!--            <version>${parent.version}</version>-->
+        <!--        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.felix</groupId>-->
+        <!--            <artifactId>org.apache.felix.scr.annotations</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.onosproject</groupId>-->
+        <!--            <artifactId>onos-api</artifactId>-->
+        <!--            <version>1.14.0</version>-->
+        <!--        </dependency>-->
+
+        <!--    </dependencies>-->
+
+        <!--    <build>-->
+        <!--        <plugins>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.felix</groupId>-->
+        <!--                <artifactId>maven-bundle-plugin</artifactId>-->
+
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.felix</groupId>-->
+        <!--                <artifactId>maven-scr-plugin</artifactId>-->
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.onosproject</groupId>-->
+        <!--                <artifactId>onos-maven-plugin</artifactId>-->
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+        <!--                <configuration>-->
+        <!--                    <skip>true</skip>-->
+        <!--                </configuration>-->
+        <!--            </plugin>-->
+        <!--        </plugins>-->
+        <!--    </build>-->
+
+        <!--</project>-->
+
+
+
+
+
+

@@ -31,7 +31,7 @@
     <description>ONOS sample applications</description>
 
     <modules>
-        <module>ifwd</module>
+        <module>antiArpSpoof</module>
     </modules>
 
 </project>
