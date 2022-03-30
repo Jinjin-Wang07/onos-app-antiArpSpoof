@@ -22,3 +22,27 @@ In Onos CLI
 onos> app activate antiArpSpoof
 ```
 Then in the Onos terminal, you can see the start of the application.
+
+## Example
+- Run onos and app-antiArpSpoof first
+
+- Create a simple topo with 3 hosts and a switch, and connect to the controller.
+```
+$ sudo mn --controller=remote,ip=127.0.0.1,port=6653 --switch=ovs,protocols=OpenFlow13 --topo single,3
+```
+- In Mininet
+```
+mininet> pingall
+```
+The switch will submit all packets that there isn't a flow rule corresponding. After Received the packets, the controller will check it's legality,  If the packet is a normal packet, it will forward a flow rule to switch which allow this flow pass through.
+
+We can see the log info in the onos terminal and check the flow rules : 
+[screenshot]
+
+- launch attack by h1
+`arpspoof -i h1-eth0 -t 10.0.0.2 -r 10.0.0.3`
+
+The Controller will detect the illegale packet and block all packet from h1
+[screenshot]
+
+
