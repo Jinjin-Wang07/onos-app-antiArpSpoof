@@ -8,6 +8,7 @@
 - Onos 2.6.0
 - Mininet 2.2.2
 - Maven 3.6.3
+- Arpspoof
 
 ## How to use it?
 ```
@@ -25,13 +26,13 @@ Then in the Onos terminal, you can see the start of the application.
 ![StartInfo](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/blob/main/screenshots/startInfo.png)
 
 ## Example
-- Run onos and app-antiArpSpoof first
+### 1. Run onos and app-antiArpSpoof first
 
-- Create a simple topo with 3 hosts and a switch, and connect to the controller.
+### 2. Create a simple topo with 3 hosts and a switch, and connect to the controller.
 ```
 $ sudo mn --controller=remote,ip=127.0.0.1,port=6653 --switch=ovs,protocols=OpenFlow13 --topo single,3
 ```
-- In Mininet
+### 3. In Mininet
 ```
 mininet> pingall
 ```
@@ -39,16 +40,18 @@ mininet> pingall
 The switch will submit all packets that there isn't a flow rule corresponding. After Received the packets, the controller will check it's legality,  If the packet is a normal packet, it will forward a flow rule to switch which allow this flow pass through.
 
 We can see the log info in the onos terminal and check the flow rules : 
+- information in onos terminal:
 ![pingAllInfoTerm](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/blob/main/screenshots/pingInfoInOnosTerm.png)
+- Flow Rules in the switch:
 ![flowsPing](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/blob/main/screenshots/flowsPing.png)
 
-- launch attack by h1
+### 4. launch attack by h1
 `arpspoof -i h1-eth0 -t 10.0.0.2 -r 10.0.0.3`
 
-The Controller will detect the illegale packet and block all packet from h1
+### 5. Result
+- The Controller will detect the illegale packet and block all packet from h1
 ![warnInfo](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/blob/main/screenshots/warnInfo.png)
 ![bandFlow](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/blob/main/screenshots/bandFlow.png)
 
-
-
-![AfterAttack](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/raw/main/screenshots/AfterAttack.png)
+- h1 network blocked by switch: 
+![AfterAttack](https://github.com/Jinjin-Wang07/onos-app-antiArpSpoof/raw/main/screenshots/AfterAttack.png#pic_center)
