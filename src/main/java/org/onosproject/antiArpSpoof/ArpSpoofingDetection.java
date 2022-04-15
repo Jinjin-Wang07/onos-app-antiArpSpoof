@@ -97,6 +97,12 @@ public class ArpSpoofingDetection {
     /** Configure Flow Timeout for installed flow rules; default is 10 sec. */
     private int flowTimeout = 10;
 
+    // DHCP configuration
+    private final int DHCP_CLIENT_PORT = 68;
+    private final int DHCP_SERVER_PORT = 67;
+    private final IpAddress DHCP_SERVER_IP = IpAddress.valueOf("10.0.0.253");
+    private final IpAddress GateWay = IpAddress.valueOf("10.0.0.254");
+
     @Activate
     public void activate() {
         ipMacPaire = new HashMap<>();
@@ -157,7 +163,7 @@ public class ArpSpoofingDetection {
                 .withPriority(MAX_PRIORITY)
                 .build();
         flowRuleService.applyFlowRules(rule);
-        log.info("BAND Rule Applied !\n");
+        log.info("BAN Rule Applied !\n");
     }
 
     /**
@@ -172,7 +178,7 @@ public class ArpSpoofingDetection {
 
             log.info("========== Start processing packets ===========");
 
-            getIPMacPaire(ipMacPaire);
+            // getIPMacPaire(ipMacPaire);
 
             InboundPacket pkt = context.inPacket();
             Ethernet ethPkt = pkt.parsed();
@@ -193,17 +199,11 @@ public class ArpSpoofingDetection {
                     log.warn("No IP src in Arp Packet");
                 }
 
-                // More simple method to detected Arp spoofing :
-                // arpPayload.getSenderHardwareAddress() != ethPkt.getSourceMAC();
-
-                // But here we want to use the DHCP-Detection to do it
-                // The ipMacPaire simulated the ip mac pairs obtained from dhcp
                 IpAddress payloadSrcIp = IpAddress.valueOf(IpAddress.Version.INET, arpPayload.getSenderProtocolAddress());
                 if (ipMacPaire.containsKey(payloadSrcIp)){
                     MacAddress ethSrcSha = ethPkt.getSourceMAC();
-
                     // When the information in the payload is not True, Band the Host with ethSrcSha
-                    if(!ethSrcSha.equals(ipMacPaire.get(payloadSrcIp))){
+                    if(isArpSpoof(ethSrcSha, payloadSrcIp)) {
                         log.warn("Packet Illegal !!! ");
                         log.warn("============================================================================");
                         log.warn("Stocket IP-Mac Paire === " + payloadSrcIp + ":" + ipMacPaire.get(payloadSrcIp));
@@ -214,6 +214,17 @@ public class ArpSpoofingDetection {
                     } else {
                         log.info("Normal ARP Packet");
                     }
+                } else if(payloadSrcIp.isZero()){
+                    log.info("ARP packet, Testing if ip is occupied");
+                } else if(payloadSrcIp.isSelfAssigned()){
+                    log.info("Arp announcement for a self Assigned Ip : 169.254.X.X");
+                } else if(DHCP_SERVER_IP.getIp4Address().equals(payloadSrcIp.getIp4Address())){
+                    log.info("DHCP server Arp");
+                } else if(GateWay.getIp4Address().equals(payloadSrcIp.getIp4Address())){
+                    log.info("Gateway Arp");
+                } else {
+                    log.warn("IP unknown : " + payloadSrcIp);
+                    return;
                 }
             }
 
@@ -231,6 +242,10 @@ public class ArpSpoofingDetection {
             }
             System.out.println();
         }
+    }
+
+    private boolean isArpSpoof(MacAddress ethSrcSha, IpAddress payloadSrcIp) {
+        return !ethSrcSha.equals(ipMacPaire.get(payloadSrcIp));
     }
 
     // Floods the specified packet if permissible.
@@ -299,8 +314,34 @@ public class ArpSpoofingDetection {
                 log.info("Set TCP Flow Rule");
             }
 
+
+            // dhcp is at application layer, it uses UDP and the port: Client(68) Server(67)
+            // Warning : Necessary a authentidicated DHCP server, to avoid the forge of dhcp packets.
+            //
             if (ipv4Protocol == IPv4.PROTOCOL_UDP) {
                 UDP udpPacket = (UDP) ipv4Packet.getPayload();
+                int srcPort = udpPacket.getSourcePort();
+                int dstPort = udpPacket.getDestinationPort();
+
+                /*
+                    DHCP :
+                    1：DHCP Discover
+                    2：DHCP Offer
+                    3：DHCP Request
+                    4：DHCP ACK
+
+                    Here we don't consider dhcp spoofing, just extract the info from DHCP_ACK
+                 */
+                if(srcPort == DHCP_CLIENT_PORT && dstPort == DHCP_SERVER_PORT) {
+                    // A DHCP C to S : DHCP Discover / DHCP Request
+                } else if (srcPort == DHCP_SERVER_PORT && dstPort == DHCP_CLIENT_PORT){
+                    // A DHCP S to C : DHCP Offer / DHCP ACK
+                    IpAddress srcIp = IpAddress.valueOf(ipv4Packet.getSourceAddress());
+                    if(srcIp.equals(DHCP_SERVER_IP)){
+                        extractDHCPInfo(udpPacket);
+                    }
+                }
+
                 selectorBuilder.matchIPProtocol(ipv4Protocol)
                         .matchUdpSrc(TpPort.tpPort(udpPacket.getSourcePort()))
                         .matchUdpDst(TpPort.tpPort(udpPacket.getDestinationPort()));
@@ -336,5 +377,30 @@ public class ArpSpoofingDetection {
 
         //  Send packet direction on the appropriate port
         packetOut(context, portNumber);
+    }
+
+
+    /*
+        Get the IP - MAC pair from DHCP packets
+     */
+    private void extractDHCPInfo(UDP udpPacket) {
+        log.info("================= A DHCP ACK Packet ================");
+
+        DHCP dhcpPacket = (DHCP) udpPacket.getPayload();
+        IpAddress clientIp = IpAddress.valueOf(dhcpPacket.getClientIPAddress()); // 0.0.0.0 for the first time
+        IpAddress yourIp = IpAddress.valueOf(dhcpPacket.getYourIPAddress());
+        byte[] clientMacAddr = dhcpPacket.getClientHardwareAddress();
+        MacAddress macAddress = MacAddress.valueOf(clientMacAddr);
+        log.info("Client original Ip == " + clientIp);
+        log.info("Client get Ip == " + yourIp);
+        log.info("Client Mac Address == " + macAddress);
+        log.info("Add Client Ip and Client Mac to Cache");
+
+        // Refresh ip mac info
+        ipMacPaire.remove(yourIp);
+        ipMacPaire.put(yourIp, macAddress);
+        log.info("====================================================");
+        log.info("IP-MAC Cache === " + ipMacPaire.toString());
+        log.info("====================================================");
     }
 }
