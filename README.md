@@ -4,9 +4,10 @@
 </p>
 
 ---
-- Due to the limitations of traditional network detection methods for ARP spoofing, our project has developed an ONOS application using SDN technology to detect ARP attacks.
-
-- The controller first gets the Ip-Mac pairs by DHCP exchange. Then it monitors the network by controlling the forwarding rules of the switch. When illegal ARP packets are detected, it logs the information and issues rules to the switch to prohibit the attacker from accessing the network.
+- ARP spoofing attack is mainly seen in LAN networks, which has no efficient solution to mitigate in traditional networks, our project developed an ONOS application to mitigate ARP spoofing attacks in Software-Defined Networks. The SDN approach does not require modification of the original ARP protocol. And because of its  centralized character, it can be applied to all users in the network.
+- The defense method is mainly divided into two parts. In the first part, the controller inspects DHCP Reply messages to obtain the Client IP and Mac Address. Then it stores this IP-Mac pair in memory. For the second part, it monitors all ARP packets. If the IP address or the MAC address contained in any ARP packet is not the same as the recorded value, the packet will be dropped. And it sends rules to the switch to prohibit the attacker from accessing the network.
+- We have tested different attack scenarios for its reliability, the tests are emulated by Mininet.
+- The results show that our application can prevent both request and reply based ARP attacks.
 
 ## Environment
 ### Requirements
